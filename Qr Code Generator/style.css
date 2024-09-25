@@ -1,0 +1,41 @@
+body {
+    background-color: whitesmoke;
+}
+
+.container {
+    width: 400px;
+    padding: 20px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    border-radius: 10px;
+}
+
+.container input {
+    width: 94%;
+    padding: 10px;
+    border-radius: 8px;
+    outline: 0;
+    border: 1px solid grey;
+    margin: 10px 0 10px 0;
+}
+
+.container button {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    outline: 0;
+    background-color: rgb(31, 154, 255);
+    color: white;
+    cursor: pointer;
+}
+#qrBox{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    transition: max-height 1s;
+}

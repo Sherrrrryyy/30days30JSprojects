@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Qr Code</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="container">
+        <h3>Enter yout text here to convert in Qr Code</h3>
+        <input type="text" id="qrText" placeholder="Enter Qr Code text">
+        <div id="qrBox">
+            <img src="" id="qrImg">
+        </div>
+        <button onclick="convertQr()">Convert into QR</button>
+    </div>
+
+
+
+    <script>
+        const qrBox = document.getElementById("qrBox")
+        const qrImg = document.getElementById("qrImg")
+        const qrText = document.getElementById("qrText")
+
+        const convertQr = () => {
+            // console.log(qrCode + qrText.value);
+            if (qrText.value.length > 0) {
+                qrImg.src = "https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=" + qrText.value
+            } else {
+                alert("Please enter right text")
+            }
+        }
+    </script>
+
+</body>
+
+</html>
