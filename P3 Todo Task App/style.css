@@ -1,0 +1,59 @@
+.container {
+    width: 600px;
+    margin: 150px auto;
+    padding: 20px;
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.container input {
+    width: 95%;
+    padding: 15px;
+    outline: none;
+    border: none;
+    border-radius: 8px;
+    background-color: rgb(234, 238, 240);
+    margin-bottom: 20px;
+}
+input::placeholder{
+    color: black;
+    font-size: 12px;
+}
+input:focus{
+    outline: 1;
+    border: 0.5px solid black;
+}
+.hero{
+    display: flex;
+    justify-content: space-between;
+
+}
+.hero button{
+    width: 50%;
+    padding: 10px;
+    margin: 8px;
+    border-radius: 10px;
+    background-color: rgb(216, 140, 0);
+    border: none;
+    outline: none;
+    color: white;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+}
+button:hover{
+    background-color: rgb(255, 167, 5);
+}
+.listOfTask{
+    list-style: none;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+    border-radius: 8px;
+}
+.listOfTask li{
+    font-size: 15px;
+}
