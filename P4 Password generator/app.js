@@ -23,7 +23,7 @@ function generatePassword() {
 
 }
 
-function copyInputValue(){
+function copyInputValueByIcon(){
     passArea.select();
     document.execCommand("copy")
 }
