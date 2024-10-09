@@ -15,22 +15,21 @@ function add() {
 
     text.value = ""
 
+    var editBtn = document.createElement("i");
+    editBtn.classList.add("fas", "fa-pen-to-square");
+    editBtn.style.color = "rgb(255, 167, 5)"
+    editBtn.setAttribute("onclick", "editOnlyOne(this)");
+    li.append(editBtn);
 
-var editBtn = document.createElement("i");
-editBtn.classList.add("fas", "fa-pen-to-square"); 
-editBtn.style.color = "rgb(255, 167, 5)"
-editBtn.setAttribute("onclick", "editOnlyOne(this)");
-li.append(editBtn);
-
-var delBtn = document.createElement("i");
-delBtn.classList.add("fas", "fa-trash"); 
-delBtn.style.color = "rgb(255, 167, 5)"
-delBtn.setAttribute("onclick", "delOnlyOne(this)");
-li.append(delBtn);
+    var delBtn = document.createElement("i");
+    delBtn.classList.add("fas", "fa-trash");
+    delBtn.style.color = "rgb(255, 167, 5)"
+    delBtn.setAttribute("onclick", "delOnlyOne(this)");
+    li.append(delBtn);
 
 }
 
-function deletAll() {
+function deletAllTask() {
     const list = document.getElementById("list")
     list.innerHTML = ""
 }
