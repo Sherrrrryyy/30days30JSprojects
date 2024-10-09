@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Currency Converter</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h2>Currency Converter</h2>
+  <div class="converter">
+    <input type="number" class="searchBox" placeholder="Enter amount">
+    <select class="from">
+      <option value="USD">USD</option>
+      <option value="EUR">EUR</option>
+      <option value="GBP">GBP</option>
+      <option value="INR">INR</option>
+      <option value="CNY">CNY</option>
+      <option value="PKR">PKR</option>
+
+    </select>
+    <select class="to">
+      <option value="USD">USD</option>
+      <option value="EUR">EUR</option>
+      <option value="GBP">GBP</option>
+      <option value="INR">INR</option>
+      <option value="CNY">CNY</option>
+      <option value="PKR">PKR</option>
+
+    </select>
+    <button class="convert">Convert</button>
+    <p class="finalValue"></p>
+    <p id="finalAmountValue" style="display: none;">Converted Amount: <span class="finalValue"></span></p>
+    <button class="reset" onclick="clearVal()">Reset</button>
+  </div>
+  <script src="app. js"></script>
+</body>
+</html>
