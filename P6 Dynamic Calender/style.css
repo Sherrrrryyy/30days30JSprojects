@@ -1,0 +1,99 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #ff5722;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    width: 450px;
+    padding: 20px;
+    background-color: white;
+    box-shadow: 0 0 12px rgba(0, 0, 0, 0.1);
+}
+.container p{
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.calendar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.calendar-header i {
+    font-weight: bold;
+    border: none;
+    color: #000;
+    padding: 10px 15px;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.calender {
+    text-align: center;
+}
+
+.calender p {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+.weeks {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    list-style: none;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.weeks li {
+margin-left: 2px;
+    padding: 10px;
+    color: #000;
+}
+
+.days {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    list-style: none;
+    gap: 2px;
+}
+
+.days li {
+    padding: 18px;
+
+    text-align: center;
+    font-weight: bold;
+    color: #333;
+    transition: background-color 0.2s;
+    border-radius: 50%;
+}
+
+.days li:hover {
+    background-color: #4caf50;
+    color: white;
+    cursor: pointer;
+}
+
+.days li:nth-child(7n), .days li:nth-child(7n-6) {
+    background-color: #fafafa;
+    color: #ff5722;
+}
+
+.highlight-date{
+    background-color: red;
+}
+.highlight-date:hover{
+    background-color: none;
+}

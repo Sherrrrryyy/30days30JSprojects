@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Calneder</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    <div class="container">
+        <div class="calendar-header">
+            <i id="prevMonthBtn" class="fa-solid fa-less-than"></i>
+            <p id="monthLabel">October 2024</p>
+            <i id="nextMonthBtn" class="fa-solid fa-greater-than"></i>
+        </div>
+        <div class="calender">
+            <ul class="weeks">
+                <li>Sun</li>
+                <li>Mon</li>
+                <li>Tue</li>
+                <li>Wed</li>
+                <li>Thur</li>
+                <li>Fri</li>
+                <li>Sat</li>
+            </ul>
+            <ul class="days" id="daysContainer">
+
+            </ul>
+        </div>
+
+
+</body>
+<script>
+
+    const monthLabel = document.getElementById("monthLabel")
+    const prevMonthBtn = document.getElementById("prevMonthBtn")
+    const nextMonthBtn = document.getElementById("nextMonthBtn")
+    const daysContainer = document.getElementById("daysContainer")
+
+    let currMonth = 9
+    let currYear = 2024
+    let currDate = new Date().getDate()
+    
+
+    
+    const months = [
+        "January", "February", "March", "April", "May", "June", "July",
+        "August", "September", "October", "November", "December"
+    ];
+
+
+    const getDaysInMonth = (month, year) => {
+        return new Date(year, month + 1, 0).getDate()
+    }
+
+    const getFirstDayofMonth = (month, year) => {
+        return new Date(year, month, 1).getDay()
+    }
+
+    const updateCalender = () => {
+        monthLabel.textContent = `${months[currMonth]} ${currYear}`
+
+        const daysInMonth = getDaysInMonth(currMonth, currYear)
+
+        const firstDayOfMonth = getFirstDayofMonth(currMonth, currYear)
+
+        daysContainer.innerHTML = ''
+
+        for (let i = 0; i < firstDayOfMonth; i++) {
+            const emptyDay = document.createElement('li')
+            daysContainer.appendChild(emptyDay)
+        }
+
+        for (let day = 1; day <= daysInMonth; day++) {
+            const dayElem = document.createElement("li")
+            dayElem.textContent = day
+            if(day === currDate){
+                dayElem.classList.add("highlight-date")
+            }
+            daysContainer.appendChild(dayElem)
+        }
+    }
+
+    prevMonthBtn.addEventListener("click", () => {
+        currMonth--
+        if (currMonth < 0) {
+            currMonth = 11
+            currYear--
+        }
+        updateCalender()
+    })
+
+    nextMonthBtn.addEventListener("click", () => {
+        currMonth++
+        if (currMonth > 11) {
+            currMonth = 0
+            currYear++
+        }
+        updateCalender()
+    })
+
+
+    updateCalender();
+
+</script>
+
+</html>
